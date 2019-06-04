@@ -1,5 +1,5 @@
 import { APP_BASE_HREF } from "@angular/common";
-import NavApp from "./components/index.component";
+import NavApp from "./components/index.component.ts";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, enableProdMode } from "@angular/core";
 
@@ -7,7 +7,7 @@ enableProdMode()
 
 @NgModule({
   imports: [
-    BrowserModule,
+    BrowserModule
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/nav/' }],
   declarations: [

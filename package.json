@@ -1,7 +1,7 @@
 {
   "name": "01",
   "scripts": {
-    "start": "webpack-dev-server --port 8080",
+    "start": "webpack-dev-server --port 8081",
     "build": "webpack --config webpack.config.js -p"
   },
   "devDependencies": {
@@ -29,6 +29,7 @@
     "es6-promise": "^4.1.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-router-dom": "^5.0.0",
     "reflect-metadata": "^0.1.10",
     "rxjs": "^5.4.2",
     "single-spa": "^3.5.0",
