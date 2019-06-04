@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import singleSpaReact from 'single-spa-react'
-import Root from '../contacts/contacts/ContactsList.js'
+import App from './components/app'
 
 const domElementGetter = () => {
   let el = document.getElementById('react')
@@ -17,7 +17,7 @@ const domElementGetter = () => {
 const reactLifecycles = singleSpaReact({
   React,
   ReactDOM,
-  rootComponent: Root,
+  rootComponent: App,
   domElementGetter,
 })
 
