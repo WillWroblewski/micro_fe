@@ -7,7 +7,7 @@ const domElementGetter = () => {
   let el = document.getElementById('main')
   if (!el) {
     el = document.createElement('div')
-    el.id = 'main'
+    el.id = 'contacts'
     document.body.appendChild(el)
   }
 
@@ -22,7 +22,5 @@ const reactLifecycles = singleSpaReact({
 })
 
 export const bootstrap = props => reactLifecycles.bootstrap(props)
-
 export const mount = props => reactLifecycles.mount(props)
-
 export const unmount = props => reactLifecycles.unmount(props)
