@@ -1,7 +1,7 @@
 {
   "name": "01",
   "scripts": {
-    "start": "webpack-dev-server --port 8080",
+    "start": "webpack-dev-server --port 8081",
     "build": "webpack --config webpack.config.js -p"
   },
   "devDependencies": {
@@ -24,9 +24,12 @@
     "@angular/platform-browser": "^4.3.3",
     "@angular/platform-browser-dynamic": "^4.3.3",
     "@angular/router": "^4.3.6",
+    "bootstrap": "^4.3.1",
     "core-js": "^2.4.1",
     "eev": "^0.1.0",
     "es6-promise": "^4.1.1",
+    "jquery": "^1.9.1",
+    "popper.js": "^1.14.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "reflect-metadata": "^0.1.10",
