@@ -34,12 +34,18 @@ module.exports = {
 				test: /\.tsx?$/,
 				loader: 'ts-loader',
 			},
+			{
+				test: /\.jsx?$/,
+				exclude: [path.resolve(__dirname, 'node_modules')],
+				loader: 'babel-loader',								
+			},
 		],
 	},
 	node: {
 		fs: 'empty'
 	},
 	resolve: {
+		extensions: ['.js', '.jsx'],
 		modules: [
 			__dirname,
 			'node_modules',
