@@ -3,7 +3,6 @@ import NavApp from "./components/index.component.ts";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, enableProdMode } from "@angular/core";
 import { AppRoutes } from "./app.routes.ts";
-import AdminApp from "./components/admin.component.ts";
 
 enableProdMode()
 
@@ -13,8 +12,7 @@ enableProdMode()
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/nav/' }],
   declarations: [
-    NavApp,
-    AdminApp
+    NavApp
   ],
   bootstrap: [NavApp]
 })

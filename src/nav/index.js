@@ -1,6 +1,6 @@
 import 'zone.js'
 import 'reflect-metadata'
-import singleSpaAngular from 'single-spa-angular2'
+import singleSpaAngular2 from 'single-spa-angular2'
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 import MainModule from './main.module.ts'
 import { Router } from '@angular/router'
@@ -16,9 +16,9 @@ const domElementGetter = () => {
   return el
 }
 
-const ngLifecycles = singleSpaAngular({
+const ngLifecycles = singleSpaAngular2({
   domElementGetter,
-  MainModule,
+  mainModule: MainModule,
   angularPlatform: platformBrowserDynamic(),
   template: `<NavApp />`,
   Router,
