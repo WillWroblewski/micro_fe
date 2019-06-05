@@ -2,7 +2,6 @@ import React from 'react';
 import ListContact from './contacts/ListContact';
 
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import EditContact from './contacts/EditContact';
 
 const App = () => (
     <Router>
@@ -10,8 +9,7 @@ const App = () => (
             <div>
                 <Route exact path="/contacts" render={() => <Redirect to="/contacts/list" />} />
                 <Switch location={location}>
-                    <Route exact path="/contacts/list" component={ListContact} />
-                    <Route exact path="/contacts/edit" component={EditContact} />
+                    <Route exact path="/contacts/list" component={ListContact} />                    
                 </Switch>
             </div>
         )} />
