@@ -1,7 +1,7 @@
 import { registerApplication, start } from 'single-spa';
 
 registerApplication('nav', () => import('../nav/index'), () => true);
-registerApplication('home', () => import('../home/index'), pathPrefix('/home'));
+registerApplication('home', () => import('../home/index'), (location) => location.pathname === '/' || location.pathname === '/home');
 registerApplication('contacts', () => import('../contacts/index'), pathPrefix('/contacts'));
 
 start();
