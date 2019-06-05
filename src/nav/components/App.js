@@ -27,18 +27,18 @@ export default class App extends Component {
                                 className="nav-link" 
                                 onClick={() => {
                                     this.setState({activeLink: 'home'})
-                                    navigateTo("/")
+                                    navigateTo("/home")
                                 }}
                             >
                                 Home
                             </a>
                         </li>
-                        <li className={this.state.activeLink === 'contact' ? 'nav-item app-link active' : 'nav-item app-link'}>
+                        <li className={this.state.activeLink === 'contacts' ? 'nav-item app-link active' : 'nav-item app-link'}>
                             <a style={{ cursor: 'pointer' }}
                                 className="nav-link" 
                                 onClick={() => {
-                                    this.setState({activeLink: 'contact'})
-                                    navigateTo("/contacts/list")
+                                    this.setState({activeLink: 'contacts'})
+                                    navigateTo("/contacts")
                                 }}
                             >
                                 Contatos

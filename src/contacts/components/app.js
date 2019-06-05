@@ -4,12 +4,12 @@ import ListContact from './contacts/ListContact';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 const App = () => (
-    <Router>
+    <Router>        
         <Route render={({ location }) => (
             <div>
-                <Route exact path="/contacts" render={() => <Redirect to="/contacts/list" />} />
+                {/* <Route exact path="/contacts" render={() => <Redirect to="/contacts/list" />} /> */}
                 <Switch location={location}>
-                    <Route exact path="/contacts/list" component={ListContact} />                    
+                    <Route exact path="/contacts" component={ListContact} />                                        
                 </Switch>
             </div>
         )} />
