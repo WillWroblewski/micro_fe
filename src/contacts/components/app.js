@@ -1,14 +1,22 @@
-import React, { Component } from 'react'
-import ListContact from './contacts/ListContact'
+import React from 'react';
+import ListContact from './contacts/ListContact';
 
-class App extends Component {
-    render() {
-        return (
-            <div className="container">
-                <ListContact />
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import EditContact from './contacts/EditContact';
+
+const App = () => (
+    <Router>
+        <Route render={({ location }) => (
+            <div>
+                <Route exact path="/contacts" render={() => <Redirect to="/contacts/list" />} />
+                <Switch location={location}>
+                    <Route exact path="/contacts/list" component={ListContact} />
+                    <Route exact path="/contacts/edit" component={EditContact} />
+                </Switch>
             </div>
-        )
-    }
-}
+        )} />
+    </Router>        
+)    
 
-export default App
+
+export default App;

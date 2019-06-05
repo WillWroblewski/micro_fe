@@ -1,31 +1,19 @@
-import 'zone.js'
-import 'reflect-metadata'
-import singleSpaAngular2 from 'single-spa-angular2'
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
-import MainModule from './main.module.ts'
-import { Router } from '@angular/router'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import singleSpaReact from 'single-spa-react'
+import App from './components/App'
 
-const domElementGetter = () => {
-  let el = document.getElementById('nav')
-  if (!el) {
-    el = document.createElement('div')
-    el.id = 'nav'
-    document.body.appendChild(el)
-  }
-
-  return el
+function domElementGetter() {
+  return document.getElementById("nav")
 }
 
-const ngLifecycles = singleSpaAngular2({
+const reactLifecycles = singleSpaReact({
+  React,
+  ReactDOM,
+  rootComponent: App,
   domElementGetter,
-  mainModule: MainModule,
-  angularPlatform: platformBrowserDynamic(),
-  template: `<NavApp />`,
-  Router,
 })
 
-export const bootstrap = props => ngLifecycles.bootstrap(props)
-
-export const mount = props => ngLifecycles.mount(props)
-
-export const unmount = props => ngLifecycles.unmount(props)
+export const bootstrap = props => reactLifecycles.bootstrap(props)
+export const mount = props => reactLifecycles.mount(props)
+export const unmount = props => reactLifecycles.unmount(props)

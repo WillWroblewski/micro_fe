@@ -1,9 +1,13 @@
-import { start, registerApplication } from 'single-spa'
+import { registerApplication, start } from 'single-spa';
 
-const hashPrefix = prefix => location => location.hash.startsWith(`#${prefix}`)
+registerApplication('nav', () => import('../nav/index'), () => true);
+registerApplication('home', () => import('../home/index'), (location) => location.pathname === "" || location.pathname === "/");
+registerApplication('contacts', () => import('../contacts/index'), pathPrefix('/contacts'));
 
-registerApplication('nav', () => import('../nav/index.js'), hashPrefix('/'))
-registerApplication('main', () => import('../contacts/index.js'), hashPrefix('/'))
+start();
 
-
-start()
+function pathPrefix(prefix) {
+  return function (location) {
+    return location.pathname.startsWith(`${prefix}`);
+  }
+}

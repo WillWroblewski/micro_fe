@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 const contacts = [
     {id: 1, name: 'Contato 01'},
@@ -12,6 +13,7 @@ class ListContact extends Component {
     render(){        
         return(
             <div>
+                <Link to="/contacts/edit">Editar</Link>
                 {
                     contacts.map((c, index) => 
                         <p key={index}>{`${c.id} - ${c.name}`}</p>
