@@ -1,15 +1,10 @@
 import React, { Component } from 'react'
 
-export default class App extends Component {
-    constructor(props){
-        super(props)
-
-        this.state = {
-            activeLink: 'home'
-        }
-    }
+export default class App extends Component {    
 
     render(){                        
+
+        let activeLink = location.pathname;
 
         const navigateTo = url => window.history.pushState(null, null, url); 
 
@@ -22,7 +17,7 @@ export default class App extends Component {
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
-                        <li className={this.state.activeLink === 'home' ? 'nav-item app-link active' : 'nav-item app-link'}>
+                        <li className={activeLink.indexOf('/home') === 0 ? 'nav-item app-link active' : 'nav-item app-link'}>
                             <a style={{ cursor: 'pointer' }}
                                 className="nav-link" 
                                 onClick={() => {
@@ -33,7 +28,7 @@ export default class App extends Component {
                                 Home
                             </a>
                         </li>
-                        <li className={this.state.activeLink === 'contacts' ? 'nav-item app-link active' : 'nav-item app-link'}>
+                        <li className={activeLink.indexOf('/contacts') === 0 ? 'nav-item app-link active' : 'nav-item app-link'}>
                             <a style={{ cursor: 'pointer' }}
                                 className="nav-link" 
                                 onClick={() => {
